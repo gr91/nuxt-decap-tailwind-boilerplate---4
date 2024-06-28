@@ -19,3 +19,62 @@ collections:
       - { label: 'Publish Date', name: 'date', widget: 'datetime' }
       - { label: 'Description', name: 'description', widget: 'string' }
       - { label: 'Body', name: 'body', widget: 'markdown' }
+
+  - name: 'projects'
+    label: 'Projects'
+    label_singular: 'Project'
+    folder: 'content/projects'
+    create: true
+    format: 'frontmatter'
+    slug: '{{slug}}'
+    preview_path: 'projects/{{slug}}'
+    fields:
+      - {
+          label: 'Project Category',
+          name: 'category',
+          widget: 'select',
+          default: 'animals',
+          options: [{ label: 'Animals', value: 'animals' }, { label: 'Food', value: 'food' }],
+        }
+      - { 
+          label: 'Title',
+          name: 'title',
+          widget: 'string',
+          required: true
+        }
+      - {
+          label: 'Description',
+          name: 'description',
+          widget: 'string',
+          required: false
+        }
+
+      - {
+          label: 'Expanded Description',
+          name: 'expdescription',
+          widget: 'string',
+          required: false
+        }
+
+
+      - {
+          label: 'Cover Image',
+          name: 'cover',
+          widget: 'image',
+          required: false,
+          allow_multiple: false
+        }
+      - {
+          label: 'Content',
+          name: 'body',
+          widget: 'markdown',
+          required: false
+        }
+      - {
+          label: 'Gallery',
+          name: 'gallery',
+          widget: 'list',
+          required: false,
+          summary: '{{fields.image}}',
+          field: { label: 'Image', name: 'image', widget: 'image' },
+        }
