@@ -1,6 +1,9 @@
 <template>
     <main class="mx-auto max-w-4xl space-y-6">
-    <NuxtLink to="/blog">&lt; Back</NuxtLink>
+    <!-- <NuxtLink to="/blog">&lt; Back</NuxtLink> -->
+    <nav class="mb-8" aria-label="go back">
+        <router-back class="block" />
+      </nav>
     <h1 class="text-4xl">
       {{ post.title }}
     </h1>
